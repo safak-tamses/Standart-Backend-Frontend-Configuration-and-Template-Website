@@ -1,7 +1,6 @@
-package com.example.backend.integration.repository;
+package com.example.backend.repository;
 
 import com.example.backend.model.LocationInfo;
-import com.example.backend.repository.LocationInfoRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,11 +11,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class LocationInfoRepositoryIntegrationTest {
-
+class LocationInfoRepositoryIntegrationTest {
     @Autowired
     private LocationInfoRepository locationInfoRepository;
 

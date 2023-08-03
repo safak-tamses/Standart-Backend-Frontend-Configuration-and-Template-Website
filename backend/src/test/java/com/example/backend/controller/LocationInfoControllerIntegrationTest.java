@@ -1,4 +1,4 @@
-package com.example.backend.integration.controller;
+package com.example.backend.controller;
 
 import com.example.backend.model.LocationInfo;
 import com.example.backend.repository.LocationInfoRepository;
@@ -15,9 +15,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @AutoConfigureMockMvc
-public class LocationInfoControllerIntegrationTest {
+class LocationInfoControllerIntegrationTest {
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -72,5 +74,4 @@ public class LocationInfoControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].city").value("Ankara"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].district").value("Cankaya"));
     }
-
 }

@@ -1,24 +1,29 @@
-package com.example.backend.unit.controller;
+package com.example.backend.controller;
 
-import com.example.backend.controller.LocationInfoController;
 import com.example.backend.model.LocationInfo;
 import com.example.backend.service.LocationInfoService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
+
+import static org.mockito.Mockito.*;
+
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 @ExtendWith(MockitoExtension.class)
-public class LocationInfoControllerUnitTest {
+public class LocationInfoControllerTest {
     @Mock
     private LocationInfoService locationInfoService;
 
@@ -65,3 +70,4 @@ public class LocationInfoControllerUnitTest {
         Assertions.assertThat(responseEntity.getBody()).isEqualTo(locationInfoList);
     }
 }
+
