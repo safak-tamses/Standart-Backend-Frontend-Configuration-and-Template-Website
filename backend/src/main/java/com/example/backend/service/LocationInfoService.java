@@ -15,19 +15,17 @@ import java.util.List;
 public class LocationInfoService {
     private final LocationInfoRepository locationInfoRepository;
 
-    public ResponseEntity saveInfo(LocationInfo locationInfo) {
+    public LocationInfo saveInfo(LocationInfo locationInfo) {
         try {
-            locationInfoRepository.save(locationInfo);
-            return ResponseEntity.ok("Info saved successfully");
+            return locationInfoRepository.save(locationInfo);
         } catch (Exception e) {
             throw new LocationInfoException("Error while saving info: " + e.getMessage());
         }
     }
 
-    public ResponseEntity<List<LocationInfo>> viewAllInfo(){
+    public List<LocationInfo> viewAllInfo(){
         try {
-            List<LocationInfo> allLocationInfo = locationInfoRepository.findAll();
-            return ResponseEntity.ok(allLocationInfo);
+            return locationInfoRepository.findAll();
         } catch (Exception e) {
             throw new ViewAllInfoException("Error while fetching all info", e);
         }
