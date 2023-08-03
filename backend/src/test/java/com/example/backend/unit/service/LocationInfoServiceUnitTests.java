@@ -1,7 +1,8 @@
-package com.example.backend.service;
+package com.example.backend.unit.service;
 
 import com.example.backend.model.LocationInfo;
 import com.example.backend.repository.LocationInfoRepository;
+import com.example.backend.service.LocationInfoService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,16 +10,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.ResponseEntity;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class LocationInfoServiceTests {
+public class LocationInfoServiceUnitTests {
     @Mock
     private LocationInfoRepository locationInfoRepository;
 

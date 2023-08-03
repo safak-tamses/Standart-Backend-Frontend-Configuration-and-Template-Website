@@ -1,6 +1,7 @@
-package com.example.backend.repository;
+package com.example.backend.unit.repository;
 
 import com.example.backend.model.LocationInfo;
+import com.example.backend.repository.LocationInfoRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class LocationInfoRepositoryTests {
+public class LocationInfoRepositoryUnitTests {
     @Autowired
     private LocationInfoRepository locationInfoRepository;
 
