@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 function Page1() {
   return (
     <div

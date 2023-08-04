@@ -1,7 +1,7 @@
 import "./App.css";
 
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Switch, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Page1 from "./Page/Page1";
 import Page2 from "./Page/Page2";
 import Page3 from "./Page/Page3";

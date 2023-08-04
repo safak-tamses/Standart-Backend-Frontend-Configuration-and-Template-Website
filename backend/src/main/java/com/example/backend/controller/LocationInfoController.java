@@ -17,13 +17,11 @@ public class LocationInfoController {
     private final LocationInfoService locationInfoService;
 
     @PostMapping("/save")
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<LocationInfo> saveData(@RequestBody LocationInfo locationInfo){
         return new ResponseEntity<>(locationInfoService.saveInfo(locationInfo), HttpStatus.CREATED);
     }
 
     @GetMapping("/show")
-    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<LocationInfo>> showAllInfo(){
         return new ResponseEntity<>(locationInfoService.viewAllInfo(),HttpStatus.OK);
     }

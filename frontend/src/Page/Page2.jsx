@@ -6,6 +6,7 @@ const API_URL = "http://localhost:8080/save";
 function Page2() {
   const [city, setCity] = useState('');
   const [district, setDistrict] = useState('');
+  const [numberPlate, setnumberPlate] = useState('')
   const [responseMessage, setResponseMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -16,12 +17,17 @@ function Page2() {
   const handleDistrictChange = (e) => {
     setDistrict(e.target.value);
   };
+  
+  const handlePlateNumberChange = (e) => {
+    setnumberPlate(e.target.value);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       city: city,
-      district: district
+      district: district,
+      numberPlate : numberPlate
     };
 
     const config = {
@@ -36,6 +42,7 @@ function Page2() {
         setErrorMessage('');
         setCity('');
         setDistrict('');
+        setnumberPlate('');
       })
       .catch(error => {
         setErrorMessage('Error: ' + error.message);
@@ -68,6 +75,18 @@ function Page2() {
               placeholder="Enter your district"
               value={district}
               onChange={handleDistrictChange}
+            />
+          </div>
+        
+          <div className="mb-4">
+            <label htmlFor="plateNumber" className="block font-bold mb-2">Plate Number:</label>
+            <input
+              type="text"
+              id="numberPlate"
+              className="w-full px-4 py-2 rounded border border-gray-400"
+              placeholder="Enter your plate number"
+              value={numberPlate}
+              onChange={handlePlateNumberChange}
             />
           </div>
           <button

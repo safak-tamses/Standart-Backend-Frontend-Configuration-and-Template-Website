@@ -41,6 +41,7 @@ function Page3() {
             <th className="border px-4 py-2 text-center">#</th>
             <th className="border px-4 py-2 text-center">City</th>
             <th className="border px-4 py-2 text-center">District</th>
+            <th className="border px-4 py-2 text-center">Plate Number</th>
           </tr>
         </thead>
         <tbody className="flex-1">
@@ -54,6 +55,9 @@ function Page3() {
               </td>
               <td className="border px-4 py-2 text-center align-middle">
                 {item.district}
+              </td>
+              <td className="border px-4 py-2 text-center align-middle">
+                {item.numberPlate}
               </td>
             </tr>
           ))}
